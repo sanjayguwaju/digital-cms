@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Consumption Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            margin-top: 20px;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .item label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Consumption Example</h1>
+    <div id="content">
+        Loading...
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiUrl = 'http://localhost:5000/api/ITServiceItem/6655f9d3ee0853b841ef9b2b?locale=undefined&draft=false&depth=1';
+            fetch(apiUrl, { mode: 'no-cors' })
+                .then(response => {
+                    // The response will be opaque and you won't be able to read the content
+                    console.log(response);
+                    document.getElementById('content').innerText = 'Response received, but unable to read content due to no-cors mode.';
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    document.getElementById('content').innerText = 'Error loading data';
+                });
+        });
+    </script>
+</body>
+</html>
