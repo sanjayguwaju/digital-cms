@@ -27,6 +27,7 @@ import DieticianServices from './collections/DieticianServices'
 import BeauticianServices from './collections/BeauticianServices'
 import ContactUs from './collections/ContactUs'
 import Homepage from './collections/Homepage'
+import Hero from './collections/Hero'
 
 export default buildConfig({
   admin: {
@@ -35,25 +36,9 @@ export default buildConfig({
   },
   editor: lexicalEditor({}),
   collections: [
-    Users, 
-    Article, 
-    Category, 
-    Comment, 
-    Media, 
-    Homepage,
-    AboutUs,
-    Services,
-    ITServices,
-    ITServiceItem,
-    MedicalServices,
-    PhotographyServices,
-    PhotographyServiceItem,
-    AccountingServices,
-    CakeServices,
-    CakeServiceItem,
-    DieticianServices,
-    BeauticianServices,
-    ContactUs,
+    Users,
+    Hero,
+    Media,
   ],
   express: {
     middleware: [
@@ -74,4 +59,6 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
+  cors: ['http://localhost:4321/'],
+  serverURL:'http://localhost:5000'
 })
