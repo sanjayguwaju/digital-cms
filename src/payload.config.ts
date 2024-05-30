@@ -28,6 +28,10 @@ import BeauticianServices from './collections/BeauticianServices'
 import ContactUs from './collections/ContactUs'
 import Homepage from './collections/Homepage'
 import Hero from './collections/Hero'
+import Pages from './collections/Pages'
+import About from './collections/About'
+import Facts from './collections/Facts'
+import Projects from './collections/Proiects'
 
 export default buildConfig({
   admin: {
@@ -39,6 +43,11 @@ export default buildConfig({
     Users,
     Hero,
     Media,
+    Pages,
+    About,
+    Facts,
+    Services,
+    Projects,
   ],
   express: {
     middleware: [

@@ -1,44 +1,35 @@
-const Services = {
-  slug: 'services',
+import { Block } from 'payload/types';
+
+const FeatureItem: Block = {
+  slug: 'featureItem',
   labels: {
-    singular: 'Service',
-    plural: 'Services',
+    singular: 'Feature Item',
+    plural: 'Feature Items',
   },
   fields: [
     {
       name: 'icon',
       type: 'text',
       required: true,
-      label: 'Icon Class',
+      label: 'FontAwesome Icon Class',
     },
     {
       name: 'title',
       type: 'text',
       required: true,
-      label: 'Title',
     },
     {
       name: 'description',
       type: 'textarea',
       required: true,
-      label: 'Description',
     },
     {
       name: 'animationDelay',
       type: 'text',
       required: true,
-      label: 'Animation Delay',
-    },
-    {
-      name: 'link',
-      type: 'text',
-      required: true,
-      label: 'Link',
+      label: 'Animation Delay (e.g., 0.1s, 0.3s, 0.5s)',
     },
   ],
-  access: {
-    read: () => true,
-  },
 };
 
-export default Services;
+export default FeatureItem;
